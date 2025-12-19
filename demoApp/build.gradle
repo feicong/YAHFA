@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'lab.galaxy.yahfa.demoApp'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "lab.galaxy.yahfa.demoApp"
         minSdk 21
-        targetSdk 35
+        targetSdk 36
         versionCode 1
         versionName "1.0"
     }
@@ -25,6 +25,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
+
+    dependenciesInfo {
+        includeInApk false
+        includeInBundle false
+    }
+    ndkVersion '29.0.14206865'
+    buildToolsVersion '36.1.0'
 }
 
 dependencies {

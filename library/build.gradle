@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'lab.galaxy.yahfa'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         minSdk 21
-        targetSdk 35
+        targetSdk 36
         versionCode 1
         versionName "1.0"
 
@@ -42,10 +42,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
+    ndkVersion '29.0.14206865'
+    buildToolsVersion '36.1.0'
 }
 
 dependencies {
-    implementation 'io.github.rk700:dlfunc:0.1.0'
+    //noinspection Aligned16KB
+    implementation 'io.github.rk700:dlfunc:0.1.1'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 }
