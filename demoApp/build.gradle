@@ -1,18 +1,29 @@
-apply plugin: 'com.android.application'
+// Copyright (c) 2025-2026 fei_cong(https://github.com/feicong/feicong-course)
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 28
+    namespace 'lab.galaxy.yahfa.demoApp'
+    compileSdk 35
+
     defaultConfig {
         applicationId "lab.galaxy.yahfa.demoApp"
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdk 21
+        targetSdk 35
         versionCode 1
         versionName "1.0"
     }
+
     externalNativeBuild {
         ndkBuild {
             path 'src/main/jni/Android.mk'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 }
 

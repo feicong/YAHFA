@@ -1,12 +1,15 @@
+// Copyright (c) 2025-2026 fei_cong(https://github.com/feicong/feicong-course)
 plugins {
     id 'com.android.library'
 }
 
 android {
-    compileSdkVersion 28
+    namespace 'lab.galaxy.yahfa'
+    compileSdk 35
+
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdk 21
+        targetSdk 35
         versionCode 1
         versionName "1.0"
 
@@ -18,31 +21,31 @@ android {
             }
         }
     }
+
     externalNativeBuild {
         cmake {
             path 'CMakeLists.txt'
         }
     }
+
     buildFeatures {
         prefab true
     }
 
-    packagingOptions {
-        exclude "**/libdlfunc.so"
+    packaging {
+        jniLibs {
+            excludes += ['**/libdlfunc.so']
+        }
     }
 
-//    testOptions {
-//        unitTests {
-//            packagingOptions {
-//                pickFirst "**/libdlfunc.so"
-//            }
-//        }
-//    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
 }
 
 dependencies {
     implementation 'io.github.rk700:dlfunc:0.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
-
